@@ -13,12 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create dated file
+      - name: Create dated file in content directory
         run: |
+          mkdir -p content
           now=$(date +"%Y-%m-%d-%H-%M-%S")
-          touch "$now.md"
+          filename="content/$now.md"
+          echo "# New Blog Post" > $filename
+          echo "" >> $filename
+          echo "This post was generated automatically." >> $filename
+          echo "" >> $filename
+          echo "Date: $(date +'%Y-%m-%d %H:%M:%S')" >> $filename
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "Create dated file: $now.md"
+          git add content/*.md
+          git commit -m "Create dated file: $filename"
           git push
