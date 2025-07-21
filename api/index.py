@@ -23,5 +23,5 @@ def result():
 
 @app.route('/trigger', methods=['POST'])
 def trigger():
-    os.system(f"""curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $GHTOKEN" https://api.github.com/repos/IgnatMaldive/micro-bothinone/dispatches -d '{{"event_type":"create-dated-file"}}'""")
+    os.system(f"""curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $GHTOKEN" https://api.github.com/repos/IgnatMaldive/micor-allinone-repeat/dispatches -d '{{"event_type":"create-dated-file"}}'""")
     return 'OK'

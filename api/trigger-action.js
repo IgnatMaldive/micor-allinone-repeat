@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const response = await fetch('https://api.github.com/repos/IgnatMaldive/micro-bothinone/dispatches', {
+    const response = await fetch('https://api.github.com/repos/IgnatMaldive/micor-allinone-repeat/dispatches', {
       method: 'POST',
       headers: {
         'Accept': 'application/vnd.github.v3+json',
